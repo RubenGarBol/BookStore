@@ -22,7 +22,7 @@ class Libro(models.Model):
     nombre = models.CharField(max_length=30)
     sinopsis = models.CharField(max_length=2000)
     paginas = models.IntegerField()
-
+    linkPortada = models.CharField(max_length=1000, default="")
     precio = models.FloatField(default=0)
     descuento = models.FloatField(default=1)
     ISBN = models.CharField(max_length=13)
@@ -30,7 +30,13 @@ class Libro(models.Model):
     editorial = models.ForeignKey(Editorial, on_delete=models.CASCADE)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
 
+class Usuario(models.Model):
+	email = models.CharField(max_length=200)
+	contraseña = models.CharField(max_length=200)
+	nombre = models.CharField(max_length=200, default="")
 
-
+class Deseado(models.Model):
+	usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+	libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
 
 
