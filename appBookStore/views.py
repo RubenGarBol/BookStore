@@ -1,7 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, get_object_or_404, get_list_or_404
+from appBookStore.models import Libro
+from django.conf import settings
 
 def index(request):
-    return render(request, "appBookStore/index.html",)
+	lista_libros = Libro.objects.all()
+	context = {
+		"lista_libros": lista_libros, 
+	}
+	return render(request, 'index.html', context)
 
 def examples(request):
     return render(request, "appBookStore/examples.html",)

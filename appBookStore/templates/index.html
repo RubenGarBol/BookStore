@@ -1,0 +1,186 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BookStores</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css' %}  ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="{% static 'css/Navigation-with-Search.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Simple-Slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Team-Grid.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-search" style="background-color: #ffffff;">
+        <div class="container"><a class="navbar-brand" href="index.html" style="font-size: 24px;">BookStore</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <form class="form-inline mr-auto" target="_self">
+                    <div class="form-group"><input class="border rounded border-light form-control search-field" type="search" name="search" id="search-field" style="background-color: #d5d5d5;color: rgb(31,31,31);"><label for="search-field" style="margin: 10PX;"><i class="fa fa-search" style="color: rgb(54,60,69);"></i></label></div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Catálogo</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">Sobre Nosotros</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">Contacto</a></li>
+                </ul><a class="btn btn-light action-button" role="button" href="login.html">Login / Register</a></div>
+        </div>
+    </nav>
+    <div class="simple-slider" style="margin-bottom: 50px;">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
+                    <div class="container text-center">
+                        <div class="row">
+                            {% for libro in lista_libros %}   
+                                {% if libro.id == 1%}
+                                    <div class="col-auto col-md-6"><img src="{% static 'img/kh.png' %}" width="480"></div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col">                                                                               
+                                                <h1>{{libro.nombre}}</h1>                                               
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>{{libro.sinopsis}}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}           
+                            {% endfor %}     
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
+                    <div class="container text-center">
+                        <div class="row">
+                            {% for libro in lista_libros %}   
+                                {% if libro.id == 2%}
+                                     
+                                    <div class="col-auto col-md-6"><img src="{% static 'img/kh.png' %}" width="480"></div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col">                                                                               
+                                                <h1>{{libro.nombre}}</h1>                                               
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>{{libro.sinopsis}}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}           
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
+                    <div class="container text-center">
+                        <div class="row">
+                            {% for libro in lista_libros %}   
+                                {% if libro.id == 3%}
+                                    <div class="col-auto col-md-6"><img src="{% static 'img/destacado3.png' %}" width="480"></div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col">                                                                               
+                                                <h1>{{libro.nombre}}</h1>                                               
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>{{libro.sinopsis}}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}           
+                            {% endfor %}     
+                        </div>
+                    </div>
+                </div>3
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <div class="team-grid">
+        <div class="container">
+            <div class="intro">
+                <h1 class="display-4 text-center" style="color: rgb(53,124,195);">NOVEDADES</h1>
+                <p class="text-center">Lo mas nuevo de los mejores autores</p>
+            </div>
+            <div class="row people" style="padding-bottom: 0px;padding-top: 20px;">
+                <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image: url(&quot;2910022876294.jpg&quot;);cursor: pointer;">
+                        <div class="cover">
+                            <h3 class="name">Emily Clark</h3>
+                            <p class="title">Artist </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image: url(&quot;2910022876294.jpg&quot;);">
+                        <div class="cover">
+                            <h3 class="name">Emily Clark</h3>
+                            <p class="title">Artist </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image: url(&quot;9788420435473.jpg&quot;);">
+                        <div class="cover">
+                            <h3 class="name">Carl Kent</h3>
+                            <p class="title">Stylist </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image: url(&quot;assets/img/kh.png&quot;);">
+                        <div class="cover">
+                            <h3 class="name">Felicia Adams</h3>
+                            <p class="title">Model </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="team-grid">
+        <div class="container">
+            <div class="intro">
+                <h1 class="display-4 text-center" style="color: rgb(53,124,195);">DESTACADO</h1>
+                <p class="text-center">Los títulos más solicitadas</p>
+            </div>
+            <div class="card-group" style="padding-right: 15px;">
+                <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado1.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Ver más</button></div>
+                </div>
+                <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado2.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Ver más<br></button></div>
+                </div>
+                <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado3.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Ver más<br></button></div>
+                </div>
+            </div>
+        </div>
+    </div><div>Custom Code</div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="{% static 'js/Simple-Slider.js' %}"></script>
+</body>
+
+</html>
