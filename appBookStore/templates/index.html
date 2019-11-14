@@ -37,60 +37,73 @@
                 <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
                     <div class="container text-center">
                         <div class="row">
-                            <div class="col-auto col-md-6"><img src="assets/img/kh.png" width="480"></div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 class="display-4" style="color: rgb(53,124,195);">Heading</h6>
+                            {% for libro in lista_libros %}   
+                                {% if libro.id == 1%}
+                                    <div class="col-auto col-md-6"><img src="{% static 'img/kh.png' %}" width="480"></div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col">                                                                               
+                                                <h1>{{libro.nombre}}</h1>                                               
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>{{libro.sinopsis}}}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p>Paragraph</p>
-                                    </div>
-                                </div>
-                            </div>
+                                {% endif %}           
+                            {% endfor %}     
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
+                <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
                     <div class="container text-center">
                         <div class="row">
-                            <div class="col-md-6"><img class="img-fluid" src="assets/img/kh.png" width="500"></div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1>Heading</h1>
+                            {% for libro in lista_libros %}   
+                                {% if libro.id == 2%}
+                                     
+                                    <div class="col-auto col-md-6"><img src="{% static 'img/kh.png' %}" width="480"></div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col">                                                                               
+                                                <h1>{{libro.nombre}}</h1>                                               
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>{{libro.sinopsis}}}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p>Paragraph</p>
-                                    </div>
-                                </div>
-                            </div>
+                                {% endif %}           
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
+                <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
                     <div class="container text-center">
                         <div class="row">
-                            <div class="col-md-6"><img class="img-fluid" src="assets/img/kh.png" width="500"></div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1>Heading</h1>
+                            {% for libro in lista_libros %}   
+                                {% if libro.id == 3%}
+                                    <div class="col-auto col-md-6"><img src="{% static 'img/destacado3.png' %}" width="480"></div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col">                                                                               
+                                                <h1>{{libro.nombre}}</h1>                                               
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p>{{libro.sinopsis}}}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p>Paragraph</p>
-                                    </div>
-                                </div>
-                            </div>
+                                {% endif %}           
+                            {% endfor %}     
                         </div>
                     </div>
-                </div>
+                </div>3
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
