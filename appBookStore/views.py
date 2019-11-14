@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, "appBookStore/index.html",)
+    return render(request, "index.html",)
 
 def examples(request):
     return render(request, "appBookStore/examples.html",)
