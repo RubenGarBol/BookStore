@@ -3,9 +3,10 @@ from appBookStore.models import Libro
 from django.conf import settings
 
 def index(request):
-	lista_libros = Libro.objects.all()
+	lista_libros = Libro.objects.filter().order_by('fecha')
+	#Crear un context	
 	context = {
-		"lista_libros": lista_libros, 
+		"lista_libros": lista_libros,
 	}
 	return render(request, 'index.html', context)
 

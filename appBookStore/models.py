@@ -29,6 +29,8 @@ class Libro(models.Model):
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
     editorial = models.ForeignKey(Editorial, on_delete=models.CASCADE)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
+    fecha = models.IntegerField(default=0)
+    destacado = models.IntegerField(default=0)
 
 class Usuario(models.Model):
 	email = models.CharField(max_length=200)
