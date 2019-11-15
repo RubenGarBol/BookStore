@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 
@@ -5,17 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>ingweb</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css' %}  ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="stylesheet" href="{% static 'css/Navigation-with-Search.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Simple-Slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Team-Grid.css' %}">
 </head>
 
 <body>
@@ -38,16 +36,16 @@
             <div class="row">
                 <div class="col-md-4 col-lg-3"><img class="img-fluid" src="assets/img/kh.png" style="max-height: 100%;"></div>
                 <div class="col-md-4 col-lg-5" style="margin: 0px;">
-                    <h2 class="text-left" style="margin: 10px;">TITULO DEL LIBRO</h2>
-                    <h4 class="text-left" style="color: rgb(101,101,101);margin: 10px;margin-bottom: 10px;">AUTOR</h4>
-                    <h5 class="text-left" style="width: 300px;margin: 10px;margin-bottom: 6px;">Categorias</h5>
+                    <h2 class="text-left" style="margin: 10px;">{{ titulo }}</h2>
+                    <h4 class="text-left" style="color: rgb(101,101,101);margin: 10px;margin-bottom: 10px;">{{ autor.nombre }}</h4>
+                    <h5 class="text-left" style="width: 300px;margin: 10px;margin-bottom: 6px;">{{ genero.nombre }}</h5>
                     <div>
                         <h2 class="text-left" style="margin: 10px;">Resumen</h2>
-                        <p class="text-justify" style="margin: 10px;">Paragraph</p>
+                        <p class="text-justify" style="margin: 10px;">{{ sinopsis_min }}<a href="#resumen"> Leer completo.</a></p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h3 class="text-left" style="margin-bottom: 14px;">Precio</h3><button class="btn btn-primary btn-block" type="button">Comprar</button></div>
+                    <h3 class="text-left" style="margin-bottom: 14px;">{{ precio }}€</h3><button class="btn btn-primary btn-block" type="button">Comprar</button></div>
             </div>
         </div>
     </div>
@@ -67,7 +65,7 @@
                             <p class="text-center" style="color: rgb(0,0,0);"><strong>Nº de páginas</strong></p>
                         </div>
                         <div class="col d-lg-flex justify-content-lg-center align-items-lg-center">
-                            <p class="text-center">Paragraph</p>
+                            <p class="text-center">{{ paginas }}</p>
                         </div>
                     </div>
                     <div class="row justify-content-center align-items-center">
@@ -75,7 +73,7 @@
                             <p class="text-center" style="color: rgb(0,0,0);"><strong>Editorial</strong></p>
                         </div>
                         <div class="col d-lg-flex justify-content-lg-center align-items-lg-center">
-                            <p class="text-center">Paragraph</p>
+                            <p class="text-center">{{ editorial.nombre }}</p>
                         </div>
                     </div>
                     <div class="row justify-content-center align-items-center">
@@ -83,7 +81,7 @@
                             <p class="text-center"><strong>Idioma</strong></p>
                         </div>
                         <div class="col d-lg-flex justify-content-lg-center align-items-lg-center">
-                            <p class="text-center">Paragraph</p>
+                            <p class="text-center">{{ idioma.idioma }}</p>
                         </div>
                     </div>
                     <div class="row justify-content-center align-items-center">
@@ -91,14 +89,14 @@
                             <p class="text-center"><strong>ISBN</strong></p>
                         </div>
                         <div class="col d-lg-flex justify-content-lg-center align-items-lg-center">
-                            <p class="text-left">Paragraph</p>
+                            <p class="text-left">{{ ISBN }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-10 col-lg-7 offset-md-1 offset-lg-0">
                     <div class="text">
-                        <h1 class="text-left" style="font-size: 24px;color: rgb(0,0,0);filter: hue-rotate(0deg);"><strong>Resumen</strong></h1>
-                        <p class="text-justify">texto</p>
+                        <h1 id="resumen" name="resumen" class="text-left" style="font-size: 24px;color: rgb(0,0,0);filter: hue-rotate(0deg);"><strong>Resumen</strong></h1>
+                        <p class="text-justify">{{ sinopsis_max }}</p>
                         <figure class="figure"></figure>
                     </div>
                 </div>
@@ -120,9 +118,8 @@
                     <div class="toc"></div><img></div>
                 <div class="col-md-10 col-lg-7 offset-md-1 offset-lg-0">
                     <div class="text">
-                        <h2 class="text-left">Nombre autor</h2>
-                        <p class="text-justify">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit
-                            pulvinar dictum vel in justo.</p>
+                        <h2 class="text-left">{{ autor.nombre }}</h2>
+                        <p class="text-justify">{{ autor.bio }}</p>
                     </div>
                 </div>
             </div>

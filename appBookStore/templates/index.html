@@ -123,7 +123,8 @@
                     <div class="col-md-4 col-lg-3 item">
                         <div class="box" style="background-image: url(&quot;2910022876294.jpg&quot;);">
                             <div class="cover">
-                                <h3 class="name">{{ libro.nombre}}</h3>
+                                <a href="{% url 'details' ID=libro.id %}">
+                                    <h3 class="name">{{ libro.nombre}}</h3></a>
                                 <p class="title">{{ libro.autor.nombre }}</p>
                             </div>
                         </div>
@@ -145,7 +146,9 @@
                         <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado1.png">
                             <div class="card-body">
                                 <h4 class="card-title">{{ libro.nombre}}</h4>
-                                <p class="card-text">{{ libro.sinopsis_min }}...</p><button class="btn btn-primary" type="button">Ver más</button></div>
+                                <p class="card-text">{{ libro.sinopsis_min }}...</p>
+                                <a href="{% url 'details' ID=libro.id %}"><button class="btn btn-primary" type="button">Ver más</button></a>
+                            </div>
                         </div>
                     {% endif %}
                 {% endfor %}
