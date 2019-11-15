@@ -5,10 +5,12 @@ from appBookStore.forms import Contacto
 from django.conf import settings
 
 def index(request):
-	lista_libros = Libro.objects.filter().order_by('fecha')
+	lista_libros = Libro.objects.filter().order_by('-fecha')
+	lista_ventas = Libro.objects.filter().order_by('ventas')
 	#Crear un context	
 	context = {
 		"lista_libros": lista_libros,
+		"lista_ventas": lista_ventas,
 	}
 	return render(request, 'index.html', context)
 
