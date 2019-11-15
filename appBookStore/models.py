@@ -8,6 +8,9 @@ class Genero(models.Model):
 class Pais(models.Model):
     nombre = models.CharField(max_length=30)
 
+class Idioma(models.Model):
+    idioma = models.CharField(max_length=30)
+
 class Autor(models.Model):
     nombre = models.CharField(max_length=30)
     edad = models.IntegerField()
@@ -31,6 +34,9 @@ class Libro(models.Model):
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
     fecha = models.IntegerField(default=0)
     destacado = models.IntegerField(default=0)
+    idioma = models.ForeignKey(Idioma, on_delete=models.CASCADE)
+    ventas = models.IntegerField()
+    promocionado = models.BooleanField()
 
 class Usuario(models.Model):
 	email = models.CharField(max_length=200)
@@ -41,4 +47,7 @@ class Deseado(models.Model):
 	usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 	libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
 
-
+class MensajesContacto(models.Model):
+    email = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30)
+    mensaje = models.CharField(max_length=30)
