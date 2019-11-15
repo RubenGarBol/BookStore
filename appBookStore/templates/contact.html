@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ingweb</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="background-color: rgba(255,255,255,0.22);">
+        <div class="container"><a class="navbar-brand" href="index.html">BookStore</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <form class="form-inline mr-auto" target="_self">
+                    <div class="form-group"><input class="border rounded border-light form-control search-field" type="search" name="search" id="search-field" style="background-color: #d5d5d5;color: rgb(31,31,31);"><label for="search-field" style="margin: 10PX;"><i class="fa fa-search" style="color: rgb(54,60,69);"></i></label></div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Catálogo</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">Contacto</a></li>
+                </ul><a class="btn btn-light action-button" role="button" href="#">Login / Register</a></div>
+        </div>
+    </nav>
+    <div class="d-xl-flex justify-content-xl-center contact-clean" style="padding-bottom: 20px;padding-top: 20px;">
+        <div class="row">
+            <div class="col-lg-5 d-xl-flex justify-content-xl-center" style="margin-left: 0px;margin-right: 20px;">
+                <div class="form-group">
+                    <form action="{% url 'addUser' %}" method="post" style="padding-right: 40px;margin-right: 0px;max-width: 470px;height: 471px;width: 461px;margin-left: 0px;">
+                      {% csrf_token %}
+                        <h2 class="text-center">Contacta con nosotros</h2>
+                        <div class="form-group">
+                          {{form.nombre}}
+                        <div class="form-group">
+                          {{form.email}}
+                          <small class="form-text text-danger">Please enter a correct email address.</small>
+                        </div>
+                        <div class="form-group">
+                          {{form.mensaje}}
+                        </div>
+                        <div class="form-group">
+                          <button class="btn btn-secondary" type="submit" style="background-color: rgb(86,198,198);">ENVIAR</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xl-5 offset-xl-0" style="margin-right: 0px;margin-left: 41px;width: 451px;padding-right: 0px;">
+                <div class="row">
+                    <div class="col"><iframe allowfullscreen="" frameborder="0" width="140%" height="325" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAt-5YMokUjryev7IQSaYcAXK4geGmSTsk+&amp;q=Unibertsitate+Etorb.%2C+24%2C+48007+Bilbo%2C+Bizkaia&amp;zoom=14"></iframe></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h2 style="margin-bottom: 7px;">Av. de las Universidades, 24</h2>
+                        <h5 style="color: rgb(101,101,101);">Av. de las Universidades, 24, 48007</h5>
+                        <h5 style="color: rgb(101,101,101);">Bilbao, Vizcaya</h5>
+                        <h5 style="color: rgb(101,101,101);">Telefono: 944 13 90 00</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>

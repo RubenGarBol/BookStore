@@ -34,8 +34,7 @@ class Libro(models.Model):
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
     idioma = models.ForeignKey(Idioma, on_delete=models.CASCADE)
     ventas = models.IntegerField()
-    #Si el valor es 1, 2 o 3 el libro se promocionara en el slider de la pagina web
-    promocionado = model.IntegerField()
+    promocionado = models.BooleanField()
 
 class Usuario(models.Model):
 	email = models.CharField(max_length=200)

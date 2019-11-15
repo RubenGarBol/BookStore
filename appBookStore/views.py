@@ -20,3 +20,12 @@ def another_page(request):
 
 def contact(request):
     return render(request, "appBookStore/contact.html",)
+
+def addMensaje(request):
+    form = ContactForm(request.POST)
+
+    if form.is_valid():
+        msj = MensajesContacto(email = form.cleaned_data['email'], nombre = form.cleaned_data['name'], mensaje = form.cleaned_data['message'])
+        msj.save()
+
+    return redirect('home')
