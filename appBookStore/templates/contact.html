@@ -1,21 +1,21 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 
 <head>
+    <link rel="icon" href="https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/letter-b-icon-256.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>ingweb</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="stylesheet" href="{% static 'css/Navigation-with-Search.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Simple-Slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Team-Grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
@@ -37,11 +37,12 @@
         <div class="row">
             <div class="col-lg-5 d-xl-flex justify-content-xl-center" style="margin-left: 0px;margin-right: 20px;">
                 <div class="form-group">
-                    <form action="{% url 'addUser' %}" method="post" style="padding-right: 40px;margin-right: 0px;max-width: 470px;height: 471px;width: 461px;margin-left: 0px;">
-                      {% csrf_token %}
+                    <form action="{% url 'addMensaje' %}" method="post" style="padding-right: 40px;margin-right: 0px;max-width: 470px;height: 471px;width: 461px;margin-left: 0px;">
+                        {% csrf_token %}
                         <h2 class="text-center">Contacta con nosotros</h2>
                         <div class="form-group">
                           {{form.nombre}}
+                        </div>
                         <div class="form-group">
                           {{form.email}}
                           <small class="form-text text-danger">Please enter a correct email address.</small>
@@ -50,13 +51,16 @@
                           {{form.mensaje}}
                         </div>
                         <div class="form-group">
-                          <button class="btn btn-secondary" type="submit" style="background-color: rgb(86,198,198);">ENVIAR</button></div>
+                          <button class="btn btn-secondary" type="submit" style="background-color: rgb(86,198,198);">ENVIAR</button>
+                        </div>
                     </form>
                 </div>
             </div>
             <div class="col-xl-5 offset-xl-0" style="margin-right: 0px;margin-left: 41px;width: 451px;padding-right: 0px;">
                 <div class="row">
-                    <div class="col"><iframe allowfullscreen="" frameborder="0" width="140%" height="325" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAt-5YMokUjryev7IQSaYcAXK4geGmSTsk+&amp;q=Unibertsitate+Etorb.%2C+24%2C+48007+Bilbo%2C+Bizkaia&amp;zoom=14"></iframe></div>
+                    <div class="col">
+                        <iframe allowfullscreen="" frameborder="0" width="140%" height="325" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAt-5YMokUjryev7IQSaYcAXK4geGmSTsk+&amp;q=Unibertsitate+Etorb.%2C+24%2C+48007+Bilbo%2C+Bizkaia&amp;zoom=14"></iframe>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -69,10 +73,10 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-    <script src="assets/js/Simple-Slider.js"></script>
+    <script src="{% static 'js/Simple-Slider.js' %}"></script>
 </body>
 
 </html>

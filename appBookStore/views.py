@@ -1,5 +1,7 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404, get_list_or_404
-from appBookStore.models import Libro
+from django.shortcuts import render, HttpResponse, get_object_or_404, get_list_or_404, redirect
+from appBookStore.models import Libro, MensajesContacto
+from appBookStore.forms import Contacto
+
 from django.conf import settings
 
 def index(request):
@@ -20,13 +22,14 @@ def another_page(request):
     return render(request, "appBookStore/another_page.html",)
 
 def contact(request):
-    return render(request, "contact.html",)
+    context = {"form": Contacto}
+    return render(request, 'contact.html', context)
 
 def addMensaje(request):
-    form = ContactForm(request.POST)
+    form = Contacto(request.POST)
 
     if form.is_valid():
-        msj = MensajesContacto(email = form.cleaned_data['email'], nombre = form.cleaned_data['name'], mensaje = form.cleaned_data['message'])
+        msj = MensajesContacto(email = form.cleaned_data['email'], nombre = form.cleaned_data['nombre'], mensaje = form.cleaned_data['mensaje'])
         msj.save()
 
     return redirect('home')
