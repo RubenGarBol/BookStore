@@ -23,7 +23,8 @@ class Editorial(models.Model):
 
 class Libro(models.Model):
     nombre = models.CharField(max_length=30)
-    sinopsis = models.CharField(max_length=2000)
+    sinopsis_min = models.CharField(max_length=200,default="")
+    sinopsis_max = models.CharField(max_length=2000,default="")
     paginas = models.IntegerField()
     linkPortada = models.CharField(max_length=1000, default="")
     precio = models.FloatField(default=0)

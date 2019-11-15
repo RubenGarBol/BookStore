@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <p>{{libro.sinopsis}}}</p>
+                                                <p>{{libro.sinopsis_max}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <p>{{libro.sinopsis}}}</p>
+                                                <p>{{libro.sinopsis_max}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <p>{{libro.sinopsis}}}</p>
+                                                <p>{{libro.sinopsis_max}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -124,7 +124,7 @@
                         <div class="box" style="background-image: url(&quot;2910022876294.jpg&quot;);">
                             <div class="cover">
                                 <h3 class="name">{{ libro.nombre}}</h3>
-                                <p class="title">Artist </p>
+                                <p class="title">{{ libro.autor.nombre }}</p>
                             </div>
                         </div>
                     </div>
@@ -140,21 +140,15 @@
                 <p class="text-center">Los títulos más solicitadas</p>
             </div>
             <div class="card-group" style="padding-right: 15px;">
-                <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado1.png">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Ver más</button></div>
-                </div>
-                <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado2.png">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Ver más<br></button></div>
-                </div>
-                <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado3.png">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Ver más<br></button></div>
-                </div>
+                {% for libro in lista_ventas %}
+                    {% if libro.id < 4%}
+                        <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado1.png">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ libro.nombre}}</h4>
+                                <p class="card-text">{{ libro.sinopsis_min }}...</p><button class="btn btn-primary" type="button">Ver más</button></div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div><div>Custom Code</div>
