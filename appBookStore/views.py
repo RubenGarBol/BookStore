@@ -20,7 +20,7 @@ def another_page(request):
     return render(request, "appBookStore/another_page.html",)
 
 def contact(request):
-    return render(request, "appBookStore/contact.html",)
+    return render(request, "contact.html",)
 
 def addMensaje(request):
     form = ContactForm(request.POST)
