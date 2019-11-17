@@ -118,8 +118,7 @@
                 <p class="text-center">Lo mas nuevo de los mejores autores</p>
             </div>
             <div class="row people" style="padding-bottom: 0px;padding-top: 20px;">
-                {% for libro in lista_libros %}   
-                {% if libro.id < 5%}
+                {% for libro in lista_libros|slice:":4" %}   
                     <div class="col-md-4 col-lg-3 item">
                         <div class="box" style="background-image: url(&quot;2910022876294.jpg&quot;);">
                             <div class="cover">
@@ -129,7 +128,6 @@
                             </div>
                         </div>
                     </div>
-                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -141,8 +139,7 @@
                 <p class="text-center">Los títulos más solicitadas</p>
             </div>
             <div class="card-group" style="padding-right: 15px;">
-                {% for libro in lista_ventas %}
-                    {% if libro.id < 4%}
+                {% for libro in lista_ventas|slice:":3" %}
                         <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado1.png">
                             <div class="card-body">
                                 <h4 class="card-title">{{ libro.nombre}}</h4>
@@ -150,7 +147,6 @@
                                 <a href="{% url 'details' ID=libro.id %}"><button class="btn btn-primary" type="button">Ver más</button></a>
                             </div>
                         </div>
-                    {% endif %}
                 {% endfor %}
             </div>
         </div>
