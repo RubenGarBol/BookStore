@@ -10,37 +10,40 @@
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css' %}  ">
+    <link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="{% static 'css/Navigation-with-Search.css' %}">
     <link rel="stylesheet" href="{% static 'css/Simple-Slider.css' %}">
     <link rel="stylesheet" href="{% static 'css/Team-Grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}">
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-search" style="background-color: #ffffff;">
-        <div class="container"><a class="navbar-brand" href="index.html" style="font-size: 24px;">BookStore</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" style="font-size: 24px;" href="/">BookStore</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <form class="form-inline mr-auto" target="_self">
-                    <div class="form-group"><input class="border rounded border-light form-control search-field" type="search" name="search" id="search-field" style="background-color: #d5d5d5;color: rgb(31,31,31);"><label for="search-field" style="margin: 10PX;"><i class="fa fa-search" style="color: rgb(54,60,69);"></i></label></div>
+                    <div class="form-group"><input class="border rounded border-light form-control search-field" type="search" id="search-field" style="background-color: #d5d5d5;color: rgb(31,31,31);" name="search"><label for="search-field" style="margin: 10PX;"><i class="fa fa-search" style="color: rgb(54,60,69);"></i></label></div>
                 </form>
-                <ul class="nav navbar-nav">
+                <p class="navbar-text" style="width: 64px;"></p>
+                <ul class="nav navbar-nav d-md-flex justify-content-md-center justify-content-lg-center">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Catálogo</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Sobre Nosotros</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/contact">Contacto</a></li>
-                </ul><a class="btn btn-light action-button" role="button" href="login.html">Login / Register</a></div>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact">Contacto</a></li>
+                </ul><a class="btn btn-light action-button" role="button" href="login">Login / Register</a></div>
         </div>
     </nav>
     <div class="simple-slider" style="margin-bottom: 50px;">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
+                <div class="d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image: url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);min-height: 100%;height: 100%;">
                     <div class="container text-center">
                         <div class="row">
                             {% for libro in lista_libros %}   
                                 {% if libro.destacado == 1%}
-                                    <div class="col-auto col-md-6"><img src="{% static 'img/kh.png' %}" width="480"></div>
+                                    <div class="col-auto col-md-6"><img src="{{libro.linkPortada}}" width="480"></div>
                                     <div class="col-md-6">
                                         <div class="row">
                                             <div class="col">                                                                               
@@ -58,13 +61,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
+                <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
                     <div class="container text-center">
                         <div class="row">
-                            {% for libro in lista_libros %}   
+                                {% for libro in lista_libros %}   
                                 {% if libro.destacado == 2%}
                                      
-                                    <div class="col-auto col-md-6"><img src="{% static 'img/kh.png' %}" width="480"></div>
+                                    <div class="col-auto col-md-6"><img src="{{libro.linkPortada}}" width="480"></div>
                                     <div class="col-md-6">
                                         <div class="row">
                                             <div class="col">                                                                               
@@ -82,12 +85,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center d-lg-flex align-self-center justify-content-lg-center align-items-lg-center align-items-xl-center swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
+                <div class="swiper-slide" style="background-image:url(https://placeholdit.imgix.net/~text?txtsize=68&amp;txt=Slideshow+Image&amp;w=1920&amp;h=500);">
                     <div class="container text-center">
                         <div class="row">
                             {% for libro in lista_libros %}   
                                 {% if libro.destacado == 3%}
-                                    <div class="col-auto col-md-6"><img src="{% static 'img/destacado3.png' %}" width="480"></div>
+                                    <div class="col-auto col-md-6"><img src="{{libro.linkPortada}}" width="480"></div>
                                     <div class="col-md-6">
                                         <div class="row">
                                             <div class="col">                                                                               
@@ -104,7 +107,7 @@
                             {% endfor %}     
                         </div>
                     </div>
-                </div>3
+                </div>
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
@@ -117,10 +120,10 @@
                 <h1 class="display-4 text-center" style="color: rgb(53,124,195);">NOVEDADES</h1>
                 <p class="text-center">Lo mas nuevo de los mejores autores</p>
             </div>
-            <div class="row people" style="padding-bottom: 0px;padding-top: 20px;">
-                {% for libro in lista_libros|slice:":4" %}   
+            <div class="row people" style="padding-bottom: 0px;padding-top: 20px;min-height: wrap;">
+                {% for libro in lista_libros|slice:":4" %}
                     <div class="col-md-4 col-lg-3 item">
-                        <div class="box" style="background-image: url(&quot;2910022876294.jpg&quot;);">
+                        <div class="d-lg-flex align-items-lg-center box" style="cursor: pointer;"><img class="img-fluid d-lg-flex flex-grow-1 visible" style="max-height: 100%;" src="{{libro.linkPortada}}">
                             <div class="cover">
                                 <a href="{% url 'details' ID=libro.id %}">
                                     <h3 class="name">{{ libro.nombre}}</h3></a>
@@ -134,13 +137,13 @@
     </div>
     <div class="team-grid">
         <div class="container">
-            <div class="intro">
+            <div class="intro" style="margin-bottom: 20px;">
                 <h1 class="display-4 text-center" style="color: rgb(53,124,195);">DESTACADO</h1>
-                <p class="text-center">Los títulos más solicitadas</p>
+                <p class="text-center">Los títulos más solicitados</p>
             </div>
             <div class="card-group" style="padding-right: 15px;">
                 {% for libro in lista_ventas|slice:":3" %}
-                        <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/destacado1.png">
+                        <div class="card"><img class="card-img-top w-100 d-block" src="{{libro.linkPortada}}">
                             <div class="card-body">
                                 <h4 class="card-title">{{ libro.nombre}}</h4>
                                 <p class="card-text">{{ libro.sinopsis_min }}...</p>
@@ -148,9 +151,10 @@
                             </div>
                         </div>
                 {% endfor %}
+                </div>
             </div>
         </div>
-    </div><div>Custom Code</div>
+    </div>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>

@@ -3,10 +3,9 @@
 <html>
 
 <head>
-    <link rel="icon" href="https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/letter-b-icon-256.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>ingweb</title>
+    <title>entrega1</title>
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
@@ -18,19 +17,20 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
-<body>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="background-color: rgba(255,255,255,0.22);">
-        <div class="container"><a class="navbar-brand" href="index.html">BookStore</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
+<body style="background-color: rgb(241,247,252);">
+    <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-search" style="background-color: #ffffff;">
+        <div class="container"><a class="navbar-brand" style="font-size: 24px;" href="/">BookStore</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
                 <form class="form-inline mr-auto" target="_self">
-                    <div class="form-group"><input class="border rounded border-light form-control search-field" type="search" name="search" id="search-field" style="background-color: #d5d5d5;color: rgb(31,31,31);"><label for="search-field" style="margin: 10PX;"><i class="fa fa-search" style="color: rgb(54,60,69);"></i></label></div>
+                    <div class="form-group"><input class="border rounded border-light form-control search-field" type="search" id="search-field" style="background-color: #d5d5d5;color: rgb(31,31,31);" name="search"><label for="search-field" style="margin: 10PX;"><i class="fa fa-search" style="color: rgb(54,60,69);"></i></label></div>
                 </form>
-                <ul class="nav navbar-nav">
+                <p class="navbar-text" style="width: 64px;"></p>
+                <ul class="nav navbar-nav d-md-flex justify-content-md-center justify-content-lg-center">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Catálogo</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Sobre Nosotros</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">Contacto</a></li>
-                </ul><a class="btn btn-light action-button" role="button" href="#">Login / Register</a></div>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact">Contacto</a></li>
+                </ul><a class="btn btn-light action-button" role="button" href="login">Login / Register</a></div>
         </div>
     </nav>
     <div class="d-xl-flex justify-content-xl-center contact-clean" style="padding-bottom: 20px;padding-top: 20px;">
@@ -58,9 +58,7 @@
             </div>
             <div class="col-xl-5 offset-xl-0" style="margin-right: 0px;margin-left: 41px;width: 451px;padding-right: 0px;">
                 <div class="row">
-                    <div class="col">
-                        <iframe allowfullscreen="" frameborder="0" width="140%" height="325" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAt-5YMokUjryev7IQSaYcAXK4geGmSTsk+&amp;q=Unibertsitate+Etorb.%2C+24%2C+48007+Bilbo%2C+Bizkaia&amp;zoom=14"></iframe>
-                    </div>
+                    <div class="col"><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAt-5YMokUjryev7IQSaYcAXK4geGmSTsk+&amp;q=Unibertsitate+Etorb.%2C+24%2C+48007+Bilbo%2C+Bizkaia&amp;zoom=14" width="140%" height="325"></iframe></div>
                 </div>
                 <div class="row">
                     <div class="col">

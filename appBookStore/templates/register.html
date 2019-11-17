@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>ingweb</title>
-
+    <title>BookStore</title>
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
@@ -19,42 +18,42 @@
     <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}">
 </head>
 
-<body>
+<body style="background-color: rgb(241,247,252);">
     <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-search" style="background-color: #ffffff;">
-        <div class="container"><a class="navbar-brand" href="index.html" style="font-size: 24px;">BookStore</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" style="font-size: 24px;" href="/">BookStore</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <form class="form-inline mr-auto" target="_self">
-                    <div class="form-group"><input class="border rounded border-light form-control search-field" type="search" name="search" id="search-field" style="background-color: #d5d5d5;color: rgb(31,31,31);"><label for="search-field" style="margin: 10PX;"><i class="fa fa-search" style="color: rgb(54,60,69);"></i></label></div>
+                    <div class="form-group"><input class="border rounded border-light form-control search-field" type="search" id="search-field" style="background-color: #d5d5d5;color: rgb(31,31,31);" name="search"><label for="search-field" style="margin: 10PX;"><i class="fa fa-search" style="color: rgb(54,60,69);"></i></label></div>
                 </form>
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Catálogo</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Sobre Nosotros</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">Contacto</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact">Contacto</a></li>
                 </ul>
         </div>
         </div>
     </nav>
     <div class="register-photo" style="background-image: url(&quot;975793fff4eb682dcc396c2885a13f2f.jpg&quot;);">
-        <div class="form-container" style="width: 396px;">
-            <form action="{% url 'addUser' %}" method="post">
-                {% csrf_token %}
-                <h2 class="text-center"><strong>Crear una nueva cuenta:</strong></h2>
-                <div class="form-group">
-                    {{form.usuario}}
-                </div>
-                <div class="form-group">
-                    {{form.email}}
-                </div>
-                <div class="form-group">
-                    {{form.contraseña}}
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(33,74,128);">Registrarse</button>
-                </div>
-                <a href="login.html" class="already">Ya tengo cuenta. Quiero iniciar sesión</a>
-            </form>
-        </div>
+            <div class="form-container" style="width: 396px;">
+                <form action="{% url 'addUser' %}" method="post">
+                    {% csrf_token %}
+                    <h2 class="text-center" style="color: #214a80;"><strong>Crear una nueva cuenta:</strong></h2>
+                    <div class="form-group">
+                        {{form.usuario}}
+                    </div>
+                    <div class="form-group">
+                        {{form.email}}
+                    </div>
+                    <div class="form-group">
+                        {{form.contraseña}}
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit" style="background-color: #2980ef;">Registrarse</button>
+                    </div>
+                    <a href="login" class="already">Ya tengo cuenta. Quiero iniciar sesión</a>
+                </form>
+            </div>
     </div>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
